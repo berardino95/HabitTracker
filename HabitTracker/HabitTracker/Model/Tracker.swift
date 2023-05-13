@@ -8,6 +8,8 @@
 import Foundation
 
 struct Tracker : Codable, Identifiable {
+    
+    var session: String
     var date: Date
     var numbOfHours: Double
     var id = UUID()

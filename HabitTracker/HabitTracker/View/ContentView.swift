@@ -8,34 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var addHabitIsShowed = false
+    @State private var showSheet = false
     @StateObject private var habits = Habits()
     
     var body: some View {
-        NavigationStack {
-            List(habits.list) { habit in
-                NavigationLink{
-                    Text(habit.name)
-                } label: {
-                    Text(habit.name)
-                }
-            }
-            .navigationTitle("Habit Tracker")
-            .sheet(isPresented: $addHabitIsShowed, content: {
-                AddHabit(habits: habits)
-            })
-            .toolbar{
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        addHabitIsShowed = true
+        ZStack {
+            NavigationView {
+                List(habits.list) { habit in
+                    NavigationLink{
+                        HabitDetailView(habit: habit)
                     } label: {
-                        Image(systemName: "plus")
+                        Text(habit.name)
+                    }
+                }
+                .navigationTitle("Habit Tracker")
+                .sheet(isPresented: $showSheet) {
+                    AddOrRecView(habits: habits)
+                        .presentationDetents([.fraction(0.4), .large])
+                }
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showSheet = true
+                        } label: {
+                            Image(systemName: "plus")
+                        }
                     }
                 }
             }
         }
-        
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddHabit: View {
+struct AddHabitView: View {
     
     @ObservedObject var habits: Habits
     @Environment(\.dismiss) var dismiss
@@ -26,7 +26,7 @@ struct AddHabit: View {
                 HStack{
                     Spacer()
                     Button("Done"){
-                       addHabit()
+                       addHabit(name: name)
                     }
                     Spacer()
                 }
@@ -51,26 +51,7 @@ struct AddHabit: View {
         }
     }
     
-    func addHabit(){
-        let checkedName = name.trimmingCharacters(in: .whitespaces)
-        let newHabit = Habit(name: checkedName, track: [])
-       
-        guard !habits.list.contains(where: { habit in
-            habit.name.lowercased() == newHabit.name.lowercased()
-        }) else {
-            setAlert(title: "\(newHabit.name)", message: "already exist")
-            return
-        }
-        
-        guard !name.isEmpty else {
-            setAlert(title: "Habit", message: "is empty")
-            return
-        }
-       
-            habits.list.append(newHabit)
-            dismiss()
-
-    }
+    
     
     func setAlert(title : String, message: String) {
         alertTitle = title
@@ -78,11 +59,10 @@ struct AddHabit: View {
         alertIsShowed = true
     }
     
-    
 }
 
-struct AddHabit_Previews: PreviewProvider {
+struct AddHabitView_Previews: PreviewProvider {
     static var previews: some View {
-        AddHabit(habits: Habits())
+        AddHabitView(habits: Habits())
     }
 }
