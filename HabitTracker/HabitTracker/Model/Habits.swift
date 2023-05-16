@@ -16,7 +16,7 @@ class Habits: ObservableObject {
             }
         }
     }
-    
+   
     init(){
         if let savedItems = UserDefaults.standard.data(forKey: "list") {
             if let decodedList = try? JSONDecoder().decode([Habit].self, from: savedItems){
@@ -26,4 +26,14 @@ class Habits: ObservableObject {
         }
         list = []
     }
+    
+    var habitKeys : [String] {
+        var keys : [String] = []
+        for item in list {
+            keys.append(item.name)
+        }
+        return keys
+    }
+    
+    
 }

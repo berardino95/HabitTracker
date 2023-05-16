@@ -66,7 +66,7 @@ struct AddOrRecView: View {
             AddHabitView(habits: habits)
         }
         .fullScreenCover(isPresented: $trackHabitIsShowed) {
-            TrackHabitView()
+            TrackHabitView(habits: habits)
         }
         
     }

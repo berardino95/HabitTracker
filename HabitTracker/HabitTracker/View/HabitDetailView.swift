@@ -13,7 +13,17 @@ struct HabitDetailView: View {
     
     var body: some View {
         NavigationView {
-            Text("Text")
+            ForEach(habit.track) {track in
+                List{
+                    HStack{
+                        VStack{
+                            Text("Session name")
+                            Text("\(track.date)")
+                        }
+                        Text("\(track.duration)")
+                    }
+                }
+            }
         }
         .navigationTitle(habit.name)
     }

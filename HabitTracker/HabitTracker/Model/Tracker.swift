@@ -9,8 +9,8 @@ import Foundation
 
 struct Tracker : Codable, Identifiable {
     
-    var session: String
+    var sessionName: String
     var date: Date
-    var numbOfHours: Double
+    var duration: Double
     var id = UUID()
 }

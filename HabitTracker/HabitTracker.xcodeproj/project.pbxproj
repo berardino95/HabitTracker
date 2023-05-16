@@ -15,6 +15,7 @@
 		7F32B3892A0EA04E00D5F767 /* Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32B3882A0EA04E00D5F767 /* Habits.swift */; };
 		7F32B38B2A0EA38D00D5F767 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32B38A2A0EA38D00D5F767 /* AddHabitView.swift */; };
 		7F32B38D2A0EA6E600D5F767 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32B38C2A0EA6E600D5F767 /* Tracker.swift */; };
+		7F5154EA2A13709B003A6744 /* TrackHabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5154E92A13709B003A6744 /* TrackHabitModel.swift */; };
 		7F9F642F2A0F93B1004A7CAB /* AddHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F642E2A0F93B1004A7CAB /* AddHabitViewModel.swift */; };
 		7F9F64322A0FCE05004A7CAB /* AddOrRecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F64312A0FCE05004A7CAB /* AddOrRecView.swift */; };
 		7F9F64342A0FDDB7004A7CAB /* TrackHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F64332A0FDDB7004A7CAB /* TrackHabitView.swift */; };
@@ -31,8 +32,9 @@
 		7F32B3882A0EA04E00D5F767 /* Habits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habits.swift; sourceTree = "<group>"; };
 		7F32B38A2A0EA38D00D5F767 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		7F32B38C2A0EA6E600D5F767 /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
+		7F5154E92A13709B003A6744 /* TrackHabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHabitModel.swift; sourceTree = "<group>"; };
 		7F9F642E2A0F93B1004A7CAB /* AddHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewModel.swift; sourceTree = "<group>"; };
-		7F9F64312A0FCE05004A7CAB /* AddOrRecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddOrRecView.swift; path = HabitTracker/View/AddHabit/AddOrRecView.swift; sourceTree = SOURCE_ROOT; };
+		7F9F64312A0FCE05004A7CAB /* AddOrRecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddOrRecView.swift; path = HabitTracker/View/AddOrRecView.swift; sourceTree = SOURCE_ROOT; };
 		7F9F64332A0FDDB7004A7CAB /* TrackHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHabitView.swift; sourceTree = "<group>"; };
 		7F9F64352A0FE373004A7CAB /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,9 +91,9 @@
 			children = (
 				7F32B3782A0E9F4F00D5F767 /* ContentView.swift */,
 				7F9F64302A0F946A004A7CAB /* AddHabit */,
-				7F32B38A2A0EA38D00D5F767 /* AddHabitView.swift */,
-				7F9F64332A0FDDB7004A7CAB /* TrackHabitView.swift */,
+				7F5154EB2A1370A1003A6744 /* TrackHabit */,
 				7F9F64352A0FE373004A7CAB /* HabitDetailView.swift */,
+				7F9F64312A0FCE05004A7CAB /* AddOrRecView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,10 +108,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7F5154EB2A1370A1003A6744 /* TrackHabit */ = {
+			isa = PBXGroup;
+			children = (
+				7F9F64332A0FDDB7004A7CAB /* TrackHabitView.swift */,
+				7F5154E92A13709B003A6744 /* TrackHabitModel.swift */,
+			);
+			path = TrackHabit;
+			sourceTree = "<group>";
+		};
 		7F9F64302A0F946A004A7CAB /* AddHabit */ = {
 			isa = PBXGroup;
 			children = (
-				7F9F64312A0FCE05004A7CAB /* AddOrRecView.swift */,
+				7F32B38A2A0EA38D00D5F767 /* AddHabitView.swift */,
 				7F9F642E2A0F93B1004A7CAB /* AddHabitViewModel.swift */,
 			);
 			path = AddHabit;
@@ -193,6 +204,7 @@
 				7F32B3892A0EA04E00D5F767 /* Habits.swift in Sources */,
 				7F9F64362A0FE373004A7CAB /* HabitDetailView.swift in Sources */,
 				7F9F64342A0FDDB7004A7CAB /* TrackHabitView.swift in Sources */,
+				7F5154EA2A13709B003A6744 /* TrackHabitModel.swift in Sources */,
 				7F32B3772A0E9F4F00D5F767 /* HabitTrackerApp.swift in Sources */,
 				7F9F642F2A0F93B1004A7CAB /* AddHabitViewModel.swift in Sources */,
 			);

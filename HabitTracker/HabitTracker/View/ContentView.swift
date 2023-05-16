@@ -20,6 +20,9 @@ struct ContentView: View {
                     } label: {
                         Text(habit.name)
                     }
+                    Button("Print"){
+                        print(habit)
+                    }
                 }
                 .navigationTitle("Habit Tracker")
                 .sheet(isPresented: $showSheet) {
