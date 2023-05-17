@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddOrRecView: View {
+    
     @ObservedObject var habits: Habits
     
     @State var addHabitIsShowed = false

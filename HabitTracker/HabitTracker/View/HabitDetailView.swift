@@ -9,28 +9,46 @@ import SwiftUI
 
 struct HabitDetailView: View {
     
-    let habit : Habit
-    
+    @Binding var habit : Habit
+
     var body: some View {
         NavigationView {
-            ForEach(habit.track) {track in
-                List{
+            List{
+                ForEach($habit.track) { $track in
                     HStack{
-                        VStack{
-                            Text("Session name")
-                            Text("\(track.date)")
+                        VStack(alignment: .leading, spacing: 5){
+                            Text(track.sessionName)
+                                .font(.title2)
+                            Text("\(track.date.formatted(date: .long, time: .shortened))")
                         }
-                        Text("\(track.duration)")
+                        Spacer()
+                        Text("\(track.duration.formatted())h")
+                            .font(.title2.bold())
                     }
+                }
+                .onDelete{ indexSet in
+                    habit.track.remove(atOffsets: indexSet)
                 }
             }
         }
+        .onAppear{
+            habit.track.sort{$0.date < $1.date}
+        }
         .navigationTitle(habit.name)
+        .toolbar {
+            ToolbarItem {
+                NavigationLink{
+                    TrackHabitViewFromDetailView(habit: $habit)
+                } label : {
+                    Image(systemName: "plus")
+                }
+            }
+        }
     }
 }
 
 struct HabitDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HabitDetailView(habit: Habit(name: "Text", track: []))
+        HabitDetailView(habit: .constant(Habit.example))
     }
 }

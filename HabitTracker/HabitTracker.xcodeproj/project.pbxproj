@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FB87E0B2A14B9DD008F839E /* TrackHabitViewFromDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB87E0A2A14B9DD008F839E /* TrackHabitViewFromDetailView.swift */; };
+		5FB87E0D2A14BC5B008F839E /* TrackHabitViewFromDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB87E0C2A14BC5A008F839E /* TrackHabitViewFromDetailModel.swift */; };
 		7F32B3772A0E9F4F00D5F767 /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32B3762A0E9F4F00D5F767 /* HabitTrackerApp.swift */; };
 		7F32B3792A0E9F4F00D5F767 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F32B3782A0E9F4F00D5F767 /* ContentView.swift */; };
 		7F32B37B2A0E9F5000D5F767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F32B37A2A0E9F5000D5F767 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FB87E0A2A14B9DD008F839E /* TrackHabitViewFromDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHabitViewFromDetailView.swift; sourceTree = "<group>"; };
+		5FB87E0C2A14BC5A008F839E /* TrackHabitViewFromDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHabitViewFromDetailModel.swift; sourceTree = "<group>"; };
 		7F32B3732A0E9F4F00D5F767 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F32B3762A0E9F4F00D5F767 /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
 		7F32B3782A0E9F4F00D5F767 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			children = (
 				7F9F64332A0FDDB7004A7CAB /* TrackHabitView.swift */,
 				7F5154E92A13709B003A6744 /* TrackHabitModel.swift */,
+				5FB87E0A2A14B9DD008F839E /* TrackHabitViewFromDetailView.swift */,
+				5FB87E0C2A14BC5A008F839E /* TrackHabitViewFromDetailModel.swift */,
 			);
 			path = TrackHabit;
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 				7F32B3792A0E9F4F00D5F767 /* ContentView.swift in Sources */,
 				7F32B3892A0EA04E00D5F767 /* Habits.swift in Sources */,
 				7F9F64362A0FE373004A7CAB /* HabitDetailView.swift in Sources */,
+				5FB87E0D2A14BC5B008F839E /* TrackHabitViewFromDetailModel.swift in Sources */,
+				5FB87E0B2A14B9DD008F839E /* TrackHabitViewFromDetailView.swift in Sources */,
 				7F9F64342A0FDDB7004A7CAB /* TrackHabitView.swift in Sources */,
 				7F5154EA2A13709B003A6744 /* TrackHabitModel.swift in Sources */,
 				7F32B3772A0E9F4F00D5F767 /* HabitTrackerApp.swift in Sources */,

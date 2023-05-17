@@ -11,13 +11,21 @@ extension TrackHabitView {
     
     func addTrack (habitName: String, sessionName : String, date: Date, duration: Double){
         
+        //check if textfield aren't empty
         if !habitName.isEmpty && !sessionName.isEmpty && !duration.isZero {
             
+            //create new tracker
             let newTrack = Tracker(sessionName: sessionName, date: date, duration: duration)
             
-            if let habitIndex = habits.list.firstIndex(where: {$0.name == habitName}) {
-                var habit = habits.list[habitIndex]
-                habit.track.append(newTrack)
+            print("New Tracke: \(newTrack)")
+            
+            //finding index in the array list
+            if let habitIndex = habits.activities.firstIndex(where: {$0.name == habitName}) {
+                print("Habit index: \(habitIndex)")
+                
+                habits.activities[habitIndex].track.append(newTrack)
+                print("Habit updated: \(habits.activities[habitIndex])")
+                
                 dismiss()
                 
             } else {

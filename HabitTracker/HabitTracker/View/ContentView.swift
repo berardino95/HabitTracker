@@ -8,20 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State private var showSheet = false
     @StateObject private var habits = Habits()
     
     var body: some View {
         ZStack {
             NavigationView {
-                List(habits.list) { habit in
-                    NavigationLink{
-                        HabitDetailView(habit: habit)
-                    } label: {
-                        Text(habit.name)
+                List{
+                    ForEach($habits.activities, id:\.id) { $habit in
+                        NavigationLink{
+                            HabitDetailView(habit: $habit)
+                        } label: {
+                            HStack{
+                                Text(habit.name)
+                                Spacer()
+                                Text("\(habit.stats.formatted())h")
+                                    .font(.caption.weight(.black))
+                                    .padding(5)
+                                    .frame(minWidth: 50)
+                                    .background(color(for: habit))
+                                    .clipShape(Capsule())
+                            }
+                        }
                     }
-                    Button("Print"){
-                        print(habit)
+                    .onDelete{ indexSet in
+                        habits.activities.remove(atOffsets: indexSet)
                     }
                 }
                 .navigationTitle("Habit Tracker")
@@ -39,6 +51,24 @@ struct ContentView: View {
                     }
                 }
             }
+        }
+    }
+    
+    
+    
+    
+    func color(for habit:Habit) -> Color {
+        switch habit.stats {
+        case 0..<3:
+            return .orange
+        case 3..<10:
+            return .orange
+        case 10..<20:
+            return .green
+        case 20..<50:
+            return .blue
+        default:
+            return .indigo
         }
     }
     

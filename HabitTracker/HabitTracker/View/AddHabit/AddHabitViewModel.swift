@@ -10,10 +10,11 @@ import Foundation
 extension AddHabitView {
     
     func addHabit(name: String){
+        
         let checkedName = name.trimmingCharacters(in: .whitespaces)
         let newHabit = Habit(name: checkedName, track: [])
        
-        guard !habits.list.contains(where: { habit in
+        guard !habits.activities.contains(where: { habit in
             habit.name.lowercased() == newHabit.name.lowercased()
         }) else {
             setAlert(title: "\(newHabit.name)", message: "Already exist")
@@ -25,7 +26,7 @@ extension AddHabitView {
             return
         }
        
-            habits.list.append(newHabit)
+            habits.activities.append(newHabit)
             dismiss()
     }
         
