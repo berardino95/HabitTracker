@@ -54,9 +54,6 @@ struct ContentView: View {
         }
     }
     
-    
-    
-    
     func color(for habit:Habit) -> Color {
         switch habit.stats {
         case 0..<3:
